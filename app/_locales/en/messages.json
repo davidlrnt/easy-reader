@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "easy reader",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Expand clicked paragraph or element to cover entire page",
+    "description": "The description of the application"
+  }
+}
