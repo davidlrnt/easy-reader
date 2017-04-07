@@ -1,3 +1,13 @@
 'use strict';
 
-console.log('\'Allo \'Allo! Content script');
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    switch(request.action) {
+    case "init":
+        console.log("init")
+        break;
+    default:
+        console.log("defaut")
+		}
+  }
+);
