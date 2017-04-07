@@ -12,17 +12,18 @@
     "scripts": [
       "scripts/chromereload.js",
       "scripts/background.js"
-    ]
+    ],
+    "persistent" : false
   },
   "permissions": [
     "tabs",
     "http://*/*",
     "https://*/*"
   ],
-  "options_ui": {
-    "page": "options.html",
-    "chrome_style": true
-  },
+  // "options_ui": {
+  //   "page": "options.html",
+  //   "chrome_style": true
+  // },
   "content_scripts": [
     {
       "matches": [
@@ -41,7 +42,6 @@
       "19": "images/icon-19.png",
       "38": "images/icon-38.png"
     },
-    "default_title": "easy reader",
-    "default_popup": "popup.html"
+    "default_title": "easy reader"
   }
 }
