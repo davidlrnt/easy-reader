@@ -15,25 +15,30 @@ chrome.runtime.onMessage.addListener(
 
 const init = () => {
 	console.log($("*"))
-	$("*").mouseenter(function(evt){   
-		evt.stopPropagation();
-		$(this).addClass( "ez-reader-focused" );
-    $(this).css({"border-color": "#C1E0FF", 
-             "border-width":"5px", 
-             "border-style":"solid"});
-	});
-
-	$("*").mouseout(function () {
-		console.log("mouseout unbind")
-		// $(this).removeAttr('style');
-    $(this).css({ "border-color": "inherit",
-            "border-width": "inherit",
-            "border-style": "inherit" });
+  $("*").mouseenter(function (evt) {
+    evt.stopPropagation();
+    $(this).css({ "border-color": "#C1E0FF",
+      "border-width": "5px",
+      "border-style": "solid" });
+    $(this).on('click', function (evt) {
+      evt.stopPropagation();
+      $(this).css({
+        width: "100%",
+        height: "100vh",
+        "background-color": "white",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        "z-index": 999
+      })
     });
-		// $('.ez-reader-focused').off('click');
+  });
 
-	// $('.ez-reader-focused').on('click', function(evt){
- //    	evt.stopPropagation();
- //    	console.log("CLICK STOP")
- //    })
+  $("*").mouseout(function () {
+    $(this).css({ "border-color": "inherit",
+      "border-width": "inherit",
+      "border-style": "inherit" });
+    $(this).off( "click");
+  });
 }
+
