@@ -14,11 +14,13 @@ chrome.runtime.onMessage.addListener(
 );
 
 const init = () => {
-	console.log($('*'))
+  $.get(chrome.extension.getURL("templates/test.html"), function(content){console.log("got content", content)}, 'html')
   $('*').mouseenter(function (evt) {
     evt.stopPropagation();
     $(this).addClass('ezrdr-focused');
     $(this).on('click', function (evt) {
+      $('*').unbind("mouseenter");
+
       evt.stopPropagation();
       overlay($(this).contents());
     });

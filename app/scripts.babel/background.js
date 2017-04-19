@@ -1,10 +1,12 @@
 'use strict';
 
-chrome.runtime.onInstalled.addListener(details => {
-  console.log('previousVersion', details.previousVersion);
-});
+// chrome.runtime.onInstalled.addListener(details => {
+//   console.log('previousVersion', details.previousVersion);
+// });
 
-chrome.browserAction.setBadgeText({text: '\'100'});
+
+
+// chrome.browserAction.setBadgeText({text: '\'100'});
 
 chrome.browserAction.onClicked.addListener(function(tab) {
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {

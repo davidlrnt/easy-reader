@@ -41,5 +41,8 @@
       "38": "images/icon-38.png"
     },
     "default_title": "easy reader"
-  }
+  },
+  "web_accessible_resources": [
+    "templates/*"
+  ]
 }
